@@ -30,7 +30,7 @@ public func array_of_lines(
 
 public func createBox(
     for content: String,
-    callback: @Sendable (String) -> String
+    callback: @Sendable (String) -> String = { $0 }
 ) -> String {
     let lines = array_of_lines(from: content, mutation: callback)
     return createBox(with: lines)
