@@ -2,7 +2,7 @@
 // callback for decoupling (used to be 'stripANSI()' call)
 
 public func createBox(
-    for lines: [String],
+    with lines: [String],
 ) -> String {
     let maxLength = lines.map { $0.count }.max() ?? 0
     
@@ -33,5 +33,5 @@ public func createBox(
     callback: @Sendable (String) -> String
 ) -> String {
     let lines = array_of_lines(from: content, mutation: callback)
-    return createBox(for: lines)
+    return createBox(with: lines)
 }
